@@ -1,0 +1,55 @@
+%defaultWrapperSettings{
+	position: relative;
+	max-width: 720px;
+	margin: 0 auto 40px;
+	padding: 20px 40px 80px;
+	overflow: hidden;
+}
+
+%inputStyles{
+	font-size: 22px;
+	@media screen and (max-width: 991px){
+		font-size: 18px;
+	}
+}
+.inputWrapper{
+	@extend %defaultWrapperSettings;
+}
+
+.inputWrapperOpened{
+	@extend %defaultWrapperSettings;
+
+	.cover{
+		transform: translateY(calc(100% - 80px));
+		transition: transform .3s;
+	}
+}
+
+.text{
+	@extend %inputStyles;
+	max-width: 340px;
+	margin-bottom: 20px;
+}
+
+.textarea{
+	@extend %inputStyles;
+	resize: none;
+}
+
+.btnPrimary{
+	font-size: 24px;
+	padding: 16px 32px;
+}
+
+.cover{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 20px;
+	text-align: center;
+	background: #dfefff;
+	transform: translateY(0);
+	transition: transform .3s;
+}

@@ -1,0 +1,47 @@
+.grid{
+	font-size: 0px;
+    text-align: justify;
+	margin: 0 0 0 -20px;
+	&:after{
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+.col{
+	display: inline-block;
+	width: 50%;
+	vertical-align: top;
+	text-align: left;
+	box-sizing: border-box;
+	letter-spacing: normal;
+	white-space: normal;
+
+	h2{
+		text-align: center;
+	}
+
+	@media screen and (max-width: 991px){
+		width: 100%;
+		& + & {
+			margin-top: 50px;
+		}
+	}
+}
+
+.inner{
+	margin: 0 0 0 20px;
+}
+
+.title{
+	margin-bottom: 30px;
+	transform: translateY(-100%);
+	opacity: 0;
+	transition: transform .2s .4s, opacity .2s .4s;
+	&.showTitle{
+		transform: translateY(0);
+		opacity: 1;
+		transition: transform .2s, opacity .2s;
+	}
+}

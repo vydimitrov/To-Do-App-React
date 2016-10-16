@@ -1,0 +1,147 @@
+.listItem, .listItem label{
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	float: none;
+	width: auto;
+	list-style-type: none;
+	&:after{
+		content:'';
+		display: table;
+		clear: both;
+	}
+}
+
+.listItem{
+	position: relative;
+	height: 65px;
+	font-size: 18px;
+	overflow: hidden;
+	transition: height .4s cubic-bezier(.075, .820, .165, 1);
+	transform: translate3d(0,0,0);
+	margin-bottom: 15px;
+}
+
+.listItem label{
+	position: relative;
+	font-size: 0;
+	cursor: pointer;
+}
+
+.item{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 65px;
+	padding: 5px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	background: #ebfff8;
+}
+
+.buttons{
+	flex: 0 0 auto;
+	float: right;
+	margin-right: 10px;
+	button + button {
+		margin-left: 15px;
+	}
+}
+
+.hidden{
+	display: none;
+	visibility: hidden;
+	outline: 0;
+	opacity: 0;
+}
+
+.customCheckbox{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border: 1px solid #ddd;
+	margin: 0 10px;
+}
+
+.title{
+	position: relative;
+	flex: 1 1 auto;
+	font-size: 18px;
+	padding: 0 20px 0 0;
+}
+
+.titleInput{
+	width: 100%;
+	outline: none;
+	border: none;
+	padding: 5px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  	overflow: hidden;
+  	background: transparent;
+  	border-radius: 3px;
+}
+
+.titleInput:focus{
+	background: #fff;
+}
+
+.desc{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	top: initial;
+	width: 90%;
+	margin-left: 10%;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-top: none;
+	border-radius: 3px;
+	background: #f6fffc;
+	cursor: default;
+	word-break: break-all;
+
+	&.descOpened{
+		top: 64px;
+		transition: top .005s .4s;
+		.descInput{
+			overflow: visible;
+		}
+	}
+}
+
+.descInput{
+	width: 100%;
+	outline: none;
+	border: none;
+	padding: 10px;
+  	background: transparent;
+  	border-radius: 3px;
+  	resize: none;
+  	vertical-align: top;
+  	overflow: hidden;
+}
+
+.descInput:focus{
+	background: #fff;
+}
+
+.thumbUp{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%) scale(0);
+	width: 32px;
+	height: 32px;
+	transition: transform .1s;
+}
+
+.itemChecked{
+	.thumbUp{
+		transform: translate(-50%,-50%) scale(1);
+		transition: transform .1s;
+	}
+}
